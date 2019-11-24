@@ -1,0 +1,53 @@
+{
+  "name": "goforwarditroot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "webpack-dev-server --progress --color --profile --config webpack.development.config.js --mode development --hot",
+    "clean": "rm -rf build public/bundle.js && rm -rf build public/bundle.js.gz",
+    "cleansassenv": "npm rebuild node-sass",
+    "server": "nodemon server/main.js",
+    "sass": "node-sass -w public/assets/scss -o public/assets/css/ --recursive",
+    "dev": "concurrently \"npm run server\" \"npm run sass\" \"npm run client\"",
+    "prod": "npm run clean && webpack --config webpack.production.config.js --mode production --progress --colors --profile",
+    "start": "node server/main.js",
+    "prod:cp": "cp ./package.json build/ && cp ./dbconnection.js build/ && cp ./webpack.production.config.js build/ && cp -R ./services build/ && cp -R ./routes build/ && cp -R ./public/. build/ && cp -R ./models build/"
+  },
+  "author": "GoForward IT",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^3.25.1",
+    "aos": "^2.3.4",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemailer-juice": "^1.0.1",
+    "nodemon": "^1.19.4",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.14",
+    "react-dom": "^16.12.0",
+    "react-router": "^5.1.2",
+    "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "concurrently": "^5.0.0",
+    "css-loader": "^3.2.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  }
+}

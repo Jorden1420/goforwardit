@@ -1,0 +1,119 @@
+@import "../reset/reset.scss"; /*** CSS RESET ***/
+@import "../mixins/mixins.scss"; /*** SCSS MIXINS ***/
+@import "../variables/variables.scss"; /*** SCSS VARIABLES ***/
+@import "../keyframes/keyframes.scss"; /*** SCSS KEYFRAMES ***/
+
+// GLOBAL STYLES
+
+h1 {
+  font-size: $h1Size;
+}
+
+h2 {
+  font-size: $h2Size;
+}
+
+h3 {
+  font-size: $h3Size;
+}
+
+p {
+  font-size: $pSize;
+  line-height: 1.4em;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.container {
+  width: 960px;
+  margin: auto;
+}
+
+// HEADER STYLES
+
+.headerContainer {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    &:hover {
+      color: $gfOrange;
+    }
+  }
+  .navbar-light .navbar-nav .nav-link {
+    //color: #fff;
+  }
+  .logoContainer {
+    .bg-dark {
+      //background: transparent !important;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    img {
+      width: 250px;
+    }
+  }
+}
+
+// FOOTER STYLES
+
+.footerContainer {
+  footer {
+    border-top: 1px solid #1a1a1a;
+    p {
+      color: #fff;
+      padding: 20px;
+    }
+  }
+}
+
+// HOME STYLES
+
+.homeContainer {
+  .backgroundImage {
+    background-image: url("/images/homemainCover.jpg");
+    background-size: cover;
+    height: 800px;
+    align-items: center;
+    .content {
+      margin-right: 50px;
+      h1,
+      p {
+        color: #fff;
+        padding: 10px 0;
+      }
+    }
+  }
+  .firstContent {
+    .row {
+      h3,
+      p,
+      .fa,
+      .fas {
+        padding: 10px;
+      }
+      .fa,
+      .fas {
+        color: #fff;
+      }
+      h3 {
+        color: $gfOrange;
+      }
+      p {
+        color: #fff;
+      }
+    }
+  }
+}
+
+// CONTACT STYLES
+
+.contactContainer {
+  .paddingTop {
+    padding-top: 100px;
+    h1,
+    p {
+      color: #fff;
+    }
+  }
+}
